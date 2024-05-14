@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  <div class="main">
+    <div class="heading">
+      <h1>Today's Exclusive</h1>
+    </div>
+    <ul class="blog_list">
+      {% for post in posts %}
+        <li>
+          <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="access-link">
+      <a href="{% url 'post_create' %}"><button>New post <i class="bi bi-plus"></i></button></a>
+    </div>
+  </div>
+{% endblock %}

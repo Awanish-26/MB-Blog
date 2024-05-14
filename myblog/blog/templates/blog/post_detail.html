@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ post.title }}
+{% endblock %}
+
+{% block content %}
+  <div class="main_2">
+    <div class="heading">
+      <h1>{{ post.title }}</h1>
+    </div>
+
+    <div class="blog_content">
+      <p>{{ post.content|linebreaks|linebreaksbr }}</p>
+      <br />
+      <p>
+        <i class="bi bi-person"></i> Author : {{ post.author.username|title }}
+      </p>
+      <br />
+      <p>
+        <i class="bi bi-vector-pen"></i> Created : {{ post.created_at }}
+      </p>
+      <br />
+      {% if request.user == post.author %}
+        <p>
+          <i class="bi bi-trash" style="color: white;"></i>
+          <a href="{% url 'delete' post.id %}" style="color: white;">Delete</a>
+        </p>
+        <br />
+        <p>
+          <i class="bi bi-pen" style="color: white;"></i>
+          <a href="{% url 'edit' post.id %}" style="color: white;">Edit</a>
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="access-link">
+      <a href="{% url 'post_list' %}">
+        <button>
+          <span><i class="bi bi-arrow-left"></i></span>
+          Back to post list
+        </button>
+      </a>
+      <br />
+      <a href="{% url 'post_share' post.pk %}">
+        <button>
+          Share this post via Email
+          <span><i class="bi bi-send"></i></span>
+        </button>
+      </a>
+    </div>
+  </div>
+{% endblock %}

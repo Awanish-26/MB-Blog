@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    background-color: #434444;
+}
+
+.navbar {
+    position: relative;
+    background-color: #202121;
+    color: white;
+    display: flex;
+    padding: 12px 32px;
+    margin: 8px 16px;
+    border-radius: 8px;
+}
+
+.navbar::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    /* background-size: 400%, 400%; */
+    height: 2px;
+    width: 100%;
+    /* animation: gradient 10s infinite ease-in-out; */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.brand h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navlist li {
+    list-style: none;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-inline: 16px;
+    font-size: 16px;
+    background-color: #434444;
+    border-radius: 6px;
+}
+
+.navlist li:hover {
+    background-color: #0f0f0f;
+    transition: background-color 200ms ease-in-out;
+}
+
+.navlist li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navlist li:nth-child(2) {
+    color: #03e6b4;
+    background-color: inherit;
+    transition: none;
+    cursor: default;
+}
+
+.navlist li:nth-child(2):hover {
+    transition: none;
+}
+
+.navlist li form button {
+    background-color: inherit;
+    border: 0;
+    color: white;
+}
+
+.navlist li form button:hover {
+    color: rgb(187, 44, 123);
+}
+
+/* nav toggle button start */
+.toggle-button {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    top: 0.5rem;
+    right: 1rem;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.bar {
+    display: block;
+    margin-block: 5px;
+    background: white;
+    width: 2.2rem;
+    height: 4px;
+}
+
+/* nav toggle button end */
+.main {
+    padding: 24px 48px;
+    max-width: 52rem;
+}
+
+.heading {
+    position: relative;
+    margin-block: 2rem;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #18d697;
+    padding: 12px 18px;
+    color: white;
+}
+
+.heading::before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    content: "";
+    left: 20px;
+    height: 20px;
+    width: 6rem;
+    background-color: #18d697;
+    transform: translate(0, -24px);
+    border: 2px solid white;
+    border-radius: 1rem;
+    animation: lefrig 1000ms infinite alternate ease-in-out;
+}
+
+/* Every page heading */
+.heading::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    content: "";
+    right: 20px;
+    height: 20px;
+    width: 6rem;
+    background-color: #18d697;
+    transform: translate(0, 1.5px);
+    border: 2px solid white;
+    border-radius: 1rem;
+    animation: riglef 1000ms infinite alternate ease-in-out;
+}
+
+@keyframes lefrig {
+    0% {
+        left: 20px;
+    }
+
+    100% {
+        left: 40px;
+    }
+}
+
+@keyframes riglef {
+    0% {
+        right: 20px;
+    }
+
+    100% {
+        right: 40px;
+    }
+}
+
+.main form p label {
+    font-size: 32px;
+    margin-block: 12px;
+    color: #d66936;
+    font-weight: bold;
+    float: left;
+}
+
+.main form p input,
+textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    padding: 6px 10px;
+    background: linear-gradient(180deg, rgb(255, 255, 255), rgb(255, 255, 255));
+    border: 0;
+    border-bottom: 2px solid #03e6b4;
+}
+
+.main form p input,
+textarea:focus {
+    border: 0;
+    border-bottom: 1px solid #03e6b4;
+    outline: none;
+}
+
+.main form button {
+    --green: #008839;
+    font-size: 16px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    border-radius: 0.4em;
+    overflow: hidden;
+    line-height: 1em;
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.main form button:hover {
+    color: #000000;
+}
+
+.blog_list {
+    margin-block: 12px;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.blog_list li {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.blog_list li a {
+    display: block;
+    color: #95dbe0;
+    background-color: #03e6b56c;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.blog_content {
+    margin-block: 16px;
+    background-color: rgba(0, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.blog_content p {
+    color: antiquewhite;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.main_2 {
+    padding: 24px 48px;
+    margin: 0.5rem;
+}
+
+.blog_content p:nth-last-child(3) {
+    font-style: italic !important;
+    color: #21e0a1;
+}
+
+/* All forms  */
+.form {
+    border: 1px solid #009664;
+    border-radius: 6px;
+    background-color: rgba(127, 255, 212, 0.5);
+    padding: 16px 12px;
+}
+
+.form-group {
+    margin-block: 12px;
+}
+
+.form-group input {
+    width: 100%;
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 1px;
+    border-radius: 4px;
+}
+
+.form-group input:focus {
+    outline: none;
+}
+
+.form-group label {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+}
+
+
+.alert {
+    width: 100%;
+    height: auto;
+    padding: 16px 8px;
+    text-align: center;
+    background-color: #217c68;
+    color: #ffffff;
+}
+
+/* bottom links */
+.access-link a {
+    display: block;
+    margin-block: 4px;
+}
+
+.access-link a button {
+    background-color: #009664;
+    border: 1px solid #ffffff;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 16px;
+}
+
+.access-link a button:hover {
+    background-color: #00c472;
+    transition: background-color 200ms ease;
+}
+
+@media screen and (max-width: 786px) {
+    .navbar {
+        display: block;
+        z-index: 20;
+    }
+
+    .navlist {
+        display: block;
+        height: 0;
+        overflow-y: hidden;
+        transition: all 0.2s ease-in-out;
+    }
+
+
+    .toggle-button {
+        display: block;
+    }
+
+    .active {
+        margin-top: 16px;
+        height: 7rem;
+    }
+
+    .main_2 {
+        padding: 0;
+    }
+
+    .navbar {
+        margin: 0;
+        border-radius: 0;
+    }
+
+}
