@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
   Share
 {% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'share.css' %}">
+{% endblock %}
+
 {% block content %}
   <div class="main">
     {% if sent %}

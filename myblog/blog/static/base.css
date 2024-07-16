@@ -120,10 +120,11 @@ body {
     height: 4px;
 }
 
+
+
 /* nav toggle button end */
-.main {
-    padding: 24px 48px;
-    max-width: 52rem;
+.container {
+    margin: 1rem 8rem;
 }
 
 .heading {
@@ -360,8 +361,8 @@ textarea:focus {
         border-radius: 0;
     }
 
-    .main {
-        padding: 4px 4px;
+    .container {
+        margin: 4px 4px;
     }
 
     .blog_content p {

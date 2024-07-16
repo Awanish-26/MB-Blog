@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth import update_session_auth_hash
+# , login_required
 
 # Home page view
 
@@ -49,7 +50,6 @@ def edit(request, pk):
     else:
         form = EditPost(instance=post)
     return render(request, 'blog/post_create.html', {'form': form})
-# post share view
 
 
 @login_required
@@ -58,6 +58,8 @@ def delete(request, pk):
     post.delete()
     messages.success("Item deleted Succesfully")
     return redirect('/')
+
+# post share view
 
 
 def post_share(request, pk):

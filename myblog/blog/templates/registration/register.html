@@ -1,17 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
-  Register
+  Signup
 {% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+{% endblock %}
+
 {% block content %}
   <section>
     <div class="container">
-      <div class="main">
+
+      <div class="main one">
         <div class="heading">
           <h1>Signup</h1>
         </div>
       </div>
 
-      <div class="main">
+      <div class="main two">
+        <img src="{% static 'favicon/signup.svg' %}" alt="">
+      </div>
+
+      <div class="main three">
         <div class="form">
           <form method="post" action=".">
             {% csrf_token %}
@@ -48,15 +59,15 @@
             <button type="submit" class="btn btn-primary mt-2">Sign Up</button>
           </form>
         </div>
-      </div>
-
-      <div class="main">
-        <div class="form">
-          <p>
-            Already have a account, try <a href="{% url 'login' %}">login</a>
-          </p>
+        <div class="main four">
+          <div class="form">
+            <p>
+              Already have a account, try <a href="{% url 'login' %}">login</a>
+            </p>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 {% endblock %}
