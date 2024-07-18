@@ -46,17 +46,18 @@ def edit(request, pk):
         form = EditPost(request.POST, instance=post)
         if form.is_valid():
             post.save()
+            messages.success(request, "Updated succesfully")
             return redirect('post_list')
     else:
         form = EditPost(instance=post)
-    return render(request, 'blog/post_create.html', {'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form})
 
 
 @login_required
 def delete(request, pk):
     post = get_object_or_404(Post, pk=pk, author=request.user)
     post.delete()
-    messages.success("Item deleted Succesfully")
+    messages.success(request, "Item deleted Succesfully")
     return redirect('/')
 
 # post share view

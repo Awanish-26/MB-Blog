@@ -12,6 +12,9 @@
     </div>
 
     <div class="blog_content">
+      <div class="img_container" >
+        <img src="{{post.banner.url}}" alt="{{post.title}}" >
+      </div>
       <p>{{ post.content|linebreaks|linebreaksbr }}</p>
       <br />
       <p>
@@ -19,7 +22,7 @@
       </p>
       <br />
       <p>
-        <i class="bi bi-vector-pen"></i> Created : {{ post.created_at }}
+        <i class="bi bi-vector-pen"></i> Created : {{ post.created_at.date }}
       </p>
       <br />
       {% if request.user == post.author %}

@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root{
+    --c-zero:#212121;
+    --c-one:#211951;
+    --c-two:#836FFF;
+    --c-three:#15F5BA;
+    --c-four:#F0F3FF;
+    
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -7,13 +16,12 @@
 }
 
 body {
-    background-color: #434444;
+    background-color: var(--c-zero);
 }
 
 .navbar {
     position: relative;
-    background-color: #202121;
-    color: white;
+    background-color: var(--c-zero);
     display: flex;
     padding: 12px 32px;
     margin: 8px 16px;
@@ -28,10 +36,8 @@ body {
     background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
     background-size: 600% 100%;
     animation: gradient 16s linear infinite;
-    /* background-size: 400%, 400%; */
     height: 2px;
     width: 100%;
-    /* animation: gradient 10s infinite ease-in-out; */
 }
 
 @keyframes gradient {
@@ -65,12 +71,12 @@ body {
     padding: 8px 16px;
     margin-inline: 16px;
     font-size: 16px;
-    background-color: #434444;
+    background-color:var(--c-zero);
     border-radius: 6px;
 }
 
 .navlist li:hover {
-    background-color: #0f0f0f;
+    background-color: var(--c-one);
     transition: background-color 200ms ease-in-out;
 }
 
