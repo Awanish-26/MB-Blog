@@ -12,18 +12,22 @@
     </div>
 
     <div class="blog_content">
-      <div class="img_container" >
-        <img src="{{post.banner.url}}" alt="{{post.title}}" >
+      <div>
+        <p class="created_at">
+          <i class="bi bi-vector-pen"></i> Created : {{ post.created_at.date }}
+        </p> 
       </div>
-      <p>{{ post.content|linebreaks|linebreaksbr }}</p>
       <br />
-      <p>
-        <i class="bi bi-person"></i> Author : {{ post.author.username|title }}
-      </p>
-      <br />
-      <p>
-        <i class="bi bi-vector-pen"></i> Created : {{ post.created_at.date }}
-      </p>
+      <div class="img_container" >
+        <p>
+          <img src="{{post.banner.url}}" alt="{{post.title}}" >
+          {{ post.content|linebreaks|linebreaksbr }}
+        </p>
+        <br>
+        <p class="created_by" >
+          <i class="bi bi-person"></i> Author : {{ post.author.username|title }}
+        </p>
+      </div>
       <br />
       {% if request.user == post.author %}
         <p>
