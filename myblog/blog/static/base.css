@@ -7,18 +7,6 @@
     --c-three:#15f5b9bb;
     --c-four:#fff8ffff;
 }
-.dark-mode{
-    --c-four: #212121;
-    --c-one: #4548ffff;
-    --c-two: #752ba8ff;
-    --c-three: #20956fff;
-    --c-zero: #fff8ffff;
-    /* --licorice: #100015ff;
-    --risd-blue: #4548ffff;
-    --grape: #752ba8ff;
-    --sea-green: #20956fff;
-    --magnolia: #fff8ffff; */
-}
 
 * {
     margin: 0;
@@ -30,44 +18,31 @@ body {
     background-color: var(--c-zero);
 }
 
-/* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the entire scrollbar */
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background of the scrollbar track */
+    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar thumb */
+    background-color: #888; 
     border-radius: 6px; /* Rounded corners for the thumb */
     border: 3px solid #f1f1f1; /* Space around the thumb */
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the thumb when hovered */
-}
-
 /* For Firefox */
 html {
-    scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: #888 #f1f1f1; /* thumb and track color */
-}
-
-/* For IE and Edge */
-body {
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-}
-
-body::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
 
 i{
     color: var(--c-four) !important;
 }
 
+/* Background Aniamtion */
 .background{
     position: fixed;
     width: 100%;
@@ -79,15 +54,14 @@ i{
     z-index: -1;
 }
 
+/* Navbar content start */
 .navbar {
     position: relative;
     background-color: var(--c-zero);
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 12px 32px;
-    margin: 8px 16px;
-    border-radius: 8px;
-    border:0.5px solid var(--c-three);
-    border-bottom: 0;
 }
 
 .navbar::after {
@@ -102,7 +76,7 @@ i{
     width: 100%;
 
 }
-
+/* Navbar bottom animation */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -119,7 +93,6 @@ i{
 
 .brand h1 {
     font-family: Verdana;
-    text-align: center;
     font-size: 36px;
     color: var(--c-three);
 }
@@ -127,8 +100,13 @@ i{
 .navlist {
     display: flex;
     align-items: center;
-    margin-left: auto;
 }
+
+.navlist ul{
+    display: flex;
+    padding: 0;
+}
+
 
 .navlist li {
     list-style: none;
@@ -137,6 +115,7 @@ i{
     margin-inline: 16px;
     font-size: 16px;
     background-color: var(--c-zero);
+    border-bottom: 1px solid var(--c-two );
     border-radius: 6px;
 }
 
@@ -150,7 +129,7 @@ i{
     color: var(--c-four);
 }
 
-.navlist li:nth-child(2) {
+/* .navlist li:nth-child(2) {
     color: var(--c-three);
     background-color: inherit;
     transition: none;
@@ -159,7 +138,7 @@ i{
 
 .navlist li:nth-child(2):hover {
     transition: none;
-}
+} */
 
 .navlist li form button {
     background-color: inherit;
@@ -182,31 +161,21 @@ i{
     position: absolute;
     display: none;
     z-index: 10;
-    top: 0.5rem;
+    top: 4px;
     right: 1rem;
     padding: 1rem;
     width: fit-content;
     height: fit-content;
 }
 
-.bar {
-    display: block;
-    margin-block: 5px;
-    background: var(--c-four);
-    width: 2.2rem;
-    height: 4px;
-}
-
-
-
 /* nav toggle button end */
-.container {
-    margin: 1rem 8rem;
+
+section{
+    background-color: var(--c-zero);
+    padding: 1rem 8rem;
 }
 
 .img_container{
-    /* display: flex; */
-    /* justify-content: center; */
     margin-block: 1rem;
 }
 
@@ -242,63 +211,13 @@ i{
     text-transform: uppercase;
 }
 
-/* .heading::before {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    content: "";
-    left: 20px;
-    height: 20px;
-    width: 6rem;
-    background-color: var(--c-three);
-    transform: translate(0, -24px);
-    border: 2px solid var(--c-four);
-    border-radius: 1rem;
-    animation: lefrig 1000ms infinite alternate ease-in-out;
-}
 
-/* Every page heading */
-/* .heading::after {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    content: "";
-    right: 20px;
-    height: 20px;
-    width: 6rem;
-    background-color: var(--c-three);
-    transform: translate(0, 1.5px);
-    border: 2px solid var(--c-four);
-    border-radius: 1rem;
-    animation: riglef 1000ms infinite alternate ease-in-out;
-} */
-
-@keyframes lefrig {
-    0% {
-        left: 20px;
-    }
-
-    100% {
-        left: 40px;
-    }
-}
-
-@keyframes riglef {
-    0% {
-        right: 20px;
-    }
-
-    100% {
-        right: 40px;
-    }
-} */
-
-.main form p ,.chk label {
+.main form p {
     color: var(--c-four);
+}
+
+.chekbox{
+    float:right;
 }
 
 .main form p label {
@@ -306,14 +225,19 @@ i{
     margin-block: 12px;
     color: var(--c-two);
     font-weight: bold;
-    /* float: left; */
 }
 
-.change-banner{
+.chk , .change-banner{
     color: var(--c-four);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
+
+.chk > a{
+    color: var(--c-three);
+    font-weight: 100;
+}
+
 
 .main form p input,
 textarea,.change-banner input {
@@ -352,24 +276,34 @@ textarea:focus {
 }
 
 .blog_list {
-    margin-block: 12px;
-    list-style-type: none;
-    padding-inline-start: 0px;
+    padding-block: 12px;
 }
 
-.blog_list li {
-    list-style-type: none;
-    margin-top: 10px;
-}
-
-.blog_list li a {
-    display: block;
-    color: var(--c-four);
+.blog_card{
+    display: flex;
+    gap: 10px;
+    height: 200px;
+    width: 100%;
+    overflow: auto; 
+    margin-top: 1rem;
     background-color: var(--c-two);
+    border-radius: 8px;
+}
+
+.blog_card div > img{
+    height: 100%;
+}
+
+.blog_card >div> a{
+    display: block;
+    color: var(--c-three);
     padding: 4px 8px;
-    border-radius: 4px;
     font-size: 24px;
     text-decoration: none;
+}
+
+.blog_card >div> p{
+    color: var(--c-four);
 }
 
 .blog_content {
@@ -451,7 +385,6 @@ textarea:focus {
     .navbar {
         display: block;
         z-index: 20;
-        border: 0;
     }
 
     .navlist {
@@ -459,6 +392,10 @@ textarea:focus {
         height: 0;
         overflow-y: hidden;
         transition: all 0.2s ease-in-out;
+    }
+
+    .navlist ul{
+        display: block;
     }
 
     .toggle-button {
@@ -470,13 +407,9 @@ textarea:focus {
         height: 12rem;
     }
 
-    .navbar {
-        margin: 0;
-        border-radius: 0;
-    }
-
-    .container {
-        margin: 4px 4px;
+    section{
+        background-color: var(--c-zero);
+        padding: 0.4rem ;
     }
 
     .blog_content p {

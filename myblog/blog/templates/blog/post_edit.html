@@ -14,18 +14,19 @@
         <p>
           <label for="{{ form.banner.id_for_label }}">Banner:</label>
           <br>
+          <div class="chk">
           Currently: 
           {% if form.banner.value %}
-              <a href="{{ form.banner.value.url }}">{{ form.banner.value.name }}</a>
-              <div class="chk">
-                  <input type="checkbox" name="banner-clear" id="banner-clear_id">
-                  <label for="banner-clear_id">Clear</label><br>
-              </div>
+            <a href="{{ form.banner.value.url }}">{{ form.banner.value.name }}</a>
+            <div class="chekbox">
+              <input type="checkbox" name="banner-clear" id="banner-clear_id">
+              <label for="banner-clear_id">Clear</label><br>
+            </div>
+          </div>
           {% endif %}
           <br>
           <div class="change-banner">
               Change:
-              <br>
               <input type="file" name="{{ form.banner.name }}" accept="image/*" id="{{ form.banner.id_for_label }}">
           </div>
         </p>
