@@ -283,21 +283,25 @@ textarea:focus {
     display: flex;
     gap: 10px;
     height: 200px;
-    width: 100%;
-    overflow: auto; 
+    width: 100%; 
     margin-top: 1rem;
     background-color: var(--c-two);
     border-radius: 8px;
 }
 
-.blog_card div > img{
+.blog_card > div:nth-child(2){
+    overflow: auto;
+    padding: 8px;
+}
+
+.blog_card > div > img{
     height: 100%;
+    width:300px ;
 }
 
 .blog_card >div> a{
     display: block;
     color: var(--c-three);
-    padding: 4px 8px;
     font-size: 24px;
     text-decoration: none;
 }
@@ -410,6 +414,16 @@ textarea:focus {
     section{
         background-color: var(--c-zero);
         padding: 0.4rem ;
+    }
+
+    .blog_card{
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+    .blog_card > div >img{
+        width: 100%;
     }
 
     .blog_content p {
