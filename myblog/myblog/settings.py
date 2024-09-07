@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-3051_oyc_*k1t!v*v%6@w(x4yhv!857r4fdfmywovw^!%)8jba'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['awanish996.pythonanywhere.com']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
