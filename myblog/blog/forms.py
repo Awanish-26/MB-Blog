@@ -42,7 +42,7 @@ class PasswordChange(PasswordChangeForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['banner', 'title', 'content']
+        fields = ['title', 'content', 'banner']
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': 'Enter your name here...'}),
             "content": forms.Textarea(attrs={"rows": 12, 'placeholder': 'Enter your text here...'}),
@@ -52,7 +52,7 @@ class PostForm(forms.ModelForm):
 class EditPost(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['banner', 'title', 'content']
+        fields = ['title', 'content', 'banner']
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': 'Enter your name here...'}),
             "content": forms.Textarea(attrs={"rows": 12, 'placeholder': 'Enter your text here...'}),

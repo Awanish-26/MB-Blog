@@ -7,7 +7,7 @@ class Post(models.Model):
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    banner = models.ImageField(default='default.png', blank=True)
+    banner = models.ImageField(upload_to='', default='default.png', blank=True)
 
     def __str__(self):
         return self.title

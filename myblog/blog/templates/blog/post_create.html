@@ -3,18 +3,18 @@
   Create Post
 {% endblock %}
 {% block content %}
-<section>
-  <div class="container">
-  <div class="main">
-    <div class="heading">
-      <h1>Create Post</h1>
+  <section>
+    <div class="container">
+      <div class="main">
+        <div class="heading">
+          <h1>Create Post</h1>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Create Post</button>
+        </form>
+      </div>
     </div>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Create Post</button>
-    </form>
-  </div>
-  </div>
-</section>
+  </section>
 {% endblock %}
