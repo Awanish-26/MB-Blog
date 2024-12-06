@@ -9,7 +9,7 @@
     <div class="heading">
       <h1>Edit Post</h1>
     </div>
-    <form method="post">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <p>
           <label for="{{ form.banner.id_for_label }}">Banner:</label>
